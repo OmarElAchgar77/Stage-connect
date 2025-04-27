@@ -1,0 +1,362 @@
+/* ========================================================
+   SECTION: STYLES GLOBAUX
+   ======================================================== */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3 {
+    color: #5C6BC0;
+}
+
+
+/* ========================================================
+   SECTION: HEADER (EN-TÊTE)
+   ======================================================== */
+header {
+    background-color: #444f8c;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    height: 100px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #c5cae9;
+}
+
+
+/* ========================================================
+   SECTION: BANNIÈRE
+   ======================================================== */
+.banner {
+    background: linear-gradient(#444f8c, #363b5a);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.banner h1 {
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+.banner button {
+    background-color: white;
+    color: #5C6BC0;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.banner button:hover {
+    background-color: #c5cae9;
+}
+
+
+/* ========================================================
+   SECTION: OFFRES DE STAGE
+   ======================================================== */
+.offers {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.offer {
+    background: white;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align: left;
+}
+
+.offer h3 {
+    margin-top: 0;
+}
+
+.offer p {
+    margin: 5px 0;
+}
+
+.offer button {
+    background-color: #5C6BC0;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.offer button:hover {
+    background-color: #3949ab;
+}
+
+
+/* ========================================================
+   SECTION: BADGE
+   ======================================================== */
+.badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #000000;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 12px;
+}
+
+
+/* ========================================================
+   SECTION: À PROPOS
+   ======================================================== */
+.about {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.about p {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+
+/* ========================================================
+   SECTION: FOOTER
+   ======================================================== */
+footer {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+
+/* ========================================================
+   SECTION: RECHERCHE DE STAGE
+   ======================================================== */
+.search {
+    padding: 40px 20px;
+    background-color: #f4f6f9;
+    text-align: center;
+}
+
+.search h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #5C6BC0;
+}
+
+.search-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.search-form label {
+    font-size: 14px;
+    color: #333;
+}
+
+.search-form input, .search-form select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.search-form button {
+    grid-column: span 2;
+    background-color: #5C6BC0;
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-form button:hover {
+    background-color: #3949ab;
+}
+
+
+/* ========================================================
+   SECTION: PUBLIER UNE OFFRE
+   ======================================================== */
+.publish-offer {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.publish-offer h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #5C6BC0;
+}
+
+.publish-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.publish-form label {
+    font-size: 14px;
+    color: #333;
+}
+
+.publish-form input, .publish-form select, .publish-form textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.publish-form textarea {
+    resize: vertical;
+}
+
+.publish-form button {
+    grid-column: span 2;
+    background-color: #5C6BC0;
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.publish-form button:hover {
+    background-color: #3949ab;
+}
+
+
+/* ========================================================
+   SECTION: CONNEXION
+   ======================================================== */
+.login {
+    padding: 55px 20px;
+    max-width: 500px;
+    margin: 22px auto;
+    background-color: #f4f6f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #5C6BC0;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: #333;
+}
+
+.form-group input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #5C6BC0;
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #3949ab;
+}
+
+p {
+    margin-top: 15px;
+}
+
+p a {
+    color: #5C6BC0;
+    font-weight: bold;
+}
+
+
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+
+

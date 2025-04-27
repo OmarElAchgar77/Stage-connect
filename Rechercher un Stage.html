@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rechercher un Stage - Stage Connect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="logo.png" alt="Stage Connect" height="60">
+    </div>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="#">Rechercher un Stage</a>
+        <a href="Publier une Offre.html">Publier une Offre</a>
+        <a href="Connexion.html">Connexion</a>
+        <button id="darkModeBtn">🌙 Mode Sombre</button>
+
+    </nav>
+</header>
+
+<section class="search">
+    <h2>🔍 Rechercher un Stage</h2>
+    <form action="#" method="GET" class="search-form">
+        <label for="job-title">Intitulé du poste :</label>
+        <input type="text" id="job-title" name="job-title" placeholder="Développeur Web, Marketing...">
+
+        <label for="location">Localisation :</label>
+        <input type="text" id="location" name="location" placeholder="Ville, Pays">
+
+        <label for="type">Type de stage :</label>
+        <select id="type" name="type">
+            <option value="tous">Tous</option>
+            <option value="stage-teletravail">Télétravail</option>
+            <option value="stage-en-presentiel">En présentiel</option>
+        </select>
+
+        <label for="category">Catégorie :</label>
+        <select id="category" name="category">
+            <option value="tous">Toutes</option>
+            <option value="informatique">Informatique</option>
+            <option value="marketing">Marketing</option>
+            <option value="design">Design</option>
+        </select>
+
+        <button type="submit">Rechercher</button>
+    </form>
+</section>
+
+<footer>
+    &copy; 2025 Stage Connect | À propos | Contact | Politique de confidentialité
+</footer>
+
+</body>
+</html>

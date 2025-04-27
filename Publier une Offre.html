@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publier une Offre - Stage Connect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">()
+        <img src="logo.png" alt="Stage Connect" height="60">
+    </div>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="Rechercher un Stage.html">Rechercher un Stage</a>
+        <a href="#">Publier une Offre</a>
+        <a href="connexion.html">Connexion</a>
+        <button id="darkModeBtn">🌙 Mode Sombre</button>
+
+    </nav>
+</header>
+
+<section class="banner">
+    <h1>Publiez une offre de Stage</h1>
+    <button onclick="alert('Fonctionnalité à venir !')">Commencer</button>
+</section>
+
+<section class="publish-offer">
+    <h2>Publier une Nouvelle Offre de Stage</h2>
+    <form class="publish-form">
+        <div>
+            <label for="titre">Titre de l'offre :</label>
+            <input type="text" id="titre" name="titre" placeholder="Titre de l'offre de stage" required>
+        </div>
+        
+        <div>
+            <label for="entreprise">Nom de l'entreprise :</label>
+            <input type="text" id="entreprise" name="entreprise" placeholder="Nom de l'entreprise" required>
+        </div>
+        
+        <div>
+            <label for="localisation">Localisation :</label>
+            <input type="text" id="localisation" name="localisation" placeholder="Ville, Pays..." required>
+        </div>
+        
+        <div>
+            <label for="type">Type de stage :</label>
+            <select id="type" name="type" required>
+                <option value="stage">Stage</option>
+                <option value="alternance">Alternance</option>
+            </select>
+        </div>
+        
+        <div>
+            <label for="description">Description :</label>
+            <textarea id="description" name="description" placeholder="Description de l'offre" rows="4" required></textarea>
+        </div>
+        
+        <div>
+            <label for="date-debut">Date de début :</label>
+            <input type="date" id="date-debut" name="date-debut" required>
+        </div>
+        
+        <div>
+            <label for="date-fin">Date de fin :</label>
+            <input type="date" id="date-fin" name="date-fin" required>
+        </div>
+        
+        <button type="submit">Publier l'offre</button>
+    </form>
+</section>
+
+<footer>
+    &copy; 2025 Stage Connect | À propos | Contact | Politique de confidentialité
+</footer>
+
+</body>
+</html>
