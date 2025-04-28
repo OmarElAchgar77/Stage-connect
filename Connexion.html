@@ -4,7 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion - Stage Connect</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Style pour le message de succès */
+        .success-message {
+            display: none;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #f8f9fa;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo img {
+            height: 60px;
+        }
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+        }
+        .login {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
 
@@ -18,14 +78,18 @@
         <a href="Publier une Offre.html">Publier une Offre</a>
         <a href="#">Connexion</a>
         <button id="darkModeBtn">🌙 Mode Sombre</button>
-
     </nav>
 </header>
 
 <section class="login">
     <h2>Connexion à Stage Connect</h2>
 
-    <form action="dashboard.html" method="POST" class="login-form">
+    <!-- Message de succès (caché par défaut) -->
+    <div id="successMessage" class="success-message">
+        Connexion réussie ! Redirection en cours...
+    </div>
+
+    <form id="loginForm" class="login-form">
         <div class="form-group">
             <label for="email">Email :</label>
             <input type="email" id="email" name="email" required placeholder="Entrez votre email">
@@ -46,6 +110,27 @@
     &copy; 2025 Stage Connect | À propos | Contact | Politique de confidentialité
 </footer>
 
-<script src="script.js"></script>
+<script>
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Récupération des valeurs
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    
+    // Ici vous devriez normalement vérifier ces informations avec votre backend
+    // Pour cet exemple, nous allons simplement vérifier que les champs ne sont pas vides
+    
+    if(email && password) {
+        // Afficher le message de succès
+        document.getElementById('successMessage').style.display = 'block';
+        
+        // Redirection après 2 secondes
+        setTimeout(function() {
+            window.location.href = 'dashboard.html';
+        }, 2000);
+    }
+});
+</script>
 </body>
 </html>

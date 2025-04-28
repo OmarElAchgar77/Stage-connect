@@ -1,58 +1,200 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rechercher un Stage - Stage Connect</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rechercher un Stage - Stage Connect</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Simple styles pour la carte d'infos */
+    .info-stage {
+      margin-top: 20px;
+      padding: 20px;
+      border: 2px solid #007BFF;
+      border-radius: 10px;
+      display: none;
+    }
+    .offer {
+      display: none; /* Les offres sont cachées par défaut */
+      margin: 15px 0;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    .offer img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
 
 <header>
-    <div class="logo">
-        <img src="images/logo.png" alt="Stage Connect" height="60">
-    </div>
-    <nav>
-        <a href="index.html">Accueil</a>
-        <a href="#">Rechercher un Stage</a>
-        <a href="Publier une Offre.html">Publier une Offre</a>
-        <a href="Connexion.html">Connexion</a>
-        <button id="darkModeBtn">🌙 Mode Sombre</button>
-
-    </nav>
+  <div class="logo">
+    <img src="images/logo.png" alt="Stage Connect" height="60">
+  </div>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="#">Rechercher un Stage</a>
+    <a href="Publier une Offre.html">Publier une Offre</a>
+    <a href="Connexion.html">Connexion</a>
+    <button id="darkModeBtn">🌙 Mode Sombre</button>
+  </nav>
 </header>
 
 <section class="search">
-    <h2>🔍 Rechercher un Stage</h2>
-    <form action="#" method="GET" class="search-form">
-        <label for="job-title">Intitulé du poste :</label>
-        <input type="text" id="job-title" name="job-title" placeholder="Développeur Web, Marketing...">
+  <h2>🔍 Rechercher un Stage</h2>
+  <form action="#" method="GET" class="search-form">
+    <label for="job-title">Intitulé du poste :</label>
+    <input type="text" id="job-title" name="job-title" placeholder="Développeur Web, Marketing...">
 
-        <label for="location">Localisation :</label>
-        <input type="text" id="location" name="location" placeholder="Ville, Pays">
+    <label for="location">Localisation :</label>
+    <input type="text" id="location" name="location" placeholder="Ville, Pays">
 
-        <label for="type">Type de stage :</label>
-        <select id="type" name="type">
-            <option value="tous">Tous</option>
-            <option value="stage-teletravail">Télétravail</option>
-            <option value="stage-en-presentiel">En présentiel</option>
-        </select>
+    <label for="type">Type de stage :</label>
+    <select id="type" name="type">
+      <option value="tous">Tous</option>
+      <option value="stage-teletravail">Télétravail</option>
+      <option value="stage-en-presentiel">En présentiel</option>
+    </select>
 
-        <label for="category">Catégorie :</label>
-        <select id="category" name="category">
-            <option value="tous">Toutes</option>
-            <option value="informatique">Informatique</option>
-            <option value="marketing">Marketing</option>
-            <option value="design">Design</option>
-        </select>
+    <label for="category">Catégorie :</label>
+    <select id="category" name="category">
+      <option value="tous">Toutes</option>
+      <option value="informatique">Informatique</option>
+      <option value="marketing">Marketing</option>
+      <option value="design">Design</option>
+    </select>
 
-        <button type="submit">Rechercher</button>
-    </form>
+    <button id="submit" type="submit">Rechercher</button>
+  </form>
+</section>
+
+<section class="offers">
+  <h2>🎯 Résultats de Recherche</h2>
+
+  <div id="offer1" class="offer" 
+      data-title="developpeur web" 
+      data-location="télétravail" 
+      data-type="stage-teletravail" 
+      data-category="informatique">
+    <img src="images/pexels-bibekghosh-14553705.jpg" alt="">
+    <h3>💻 Développeur Web Junior</h3>
+    <p>🏢 Entreprise : Tech Solutions</p>
+    <p>📍 Localisation : Télétravail</p>
+    <button onclick="showInfo(this)">Voir Détail</button>
+  </div>
+
+  <div id="offer2" class="offer" 
+      data-title="assistant marketing" 
+      data-location="casablanca" 
+      data-type="stage-en-presentiel" 
+      data-category="marketing">
+    <img src="images/pexels-fauxels-3183153.jpg" alt="">
+    <h3>📈 Assistant Marketing</h3>
+    <p>🏢 Entreprise : MarketPro</p>
+    <p>📍 Localisation : Casablanca</p>
+    <button onclick="showInfo(this)">Voir Détail</button>
+  </div>
+
+  <div id="offer3" class="offer" 
+      data-title="designer graphique" 
+      data-location="rabat" 
+      data-type="stage-en-presentiel" 
+      data-category="design">
+    <img src="images/pexels-designecologist-1779487.jpg" alt="">
+    <h3>🎨 Designer Graphique</h3>
+    <p>🏢 Entreprise : Creativ'Lab</p>
+    <p>📍 Localisation : Rabat</p>
+    <button onclick="showInfo(this)">Voir Détail</button>
+  </div>
+
+  <div id="offer4" class="offer">
+    <img src="images/pexels-pixabay-60504.jpg" alt="">
+    <h3>🔒 Ingénieur Sécurité</h3>
+    <p>🏢 Entreprise : SecureTech</p>
+    <p>📍 Localisation : Tanger</p>
+    <button>Postuler</button>
+</div>
+
+<div id="offer5" class="offer">
+    <img src="images/pexels-mikhail-nilov-6963098.jpg" alt="">
+    <h3>🧠 Data Analyst</h3>
+    <p>🏢 Entreprise : DataCorp</p>
+    <p>📍 Localisation : Fès</p>
+    <button>Postuler</button>
+</div>
+
+<div id="offer6" class="offer">
+    <img src="images/pexels-minhle17vn-3062541.jpg" alt="">
+    <h3>🎥 Vidéaste & Monteur</h3>
+    <p>🏢 Entreprise : VisionProd</p>
+    <p>📍 Localisation : Marrakech</p>
+    <button>Postuler</button>
+</div>
+
+<div id="offer7" class="offer">
+    <img src="images/pexels-cottonbro-6804585.jpg" alt="">
+    <h3>🔧 Technicien Réseau</h3>
+    <p>🏢 Entreprise : NetWorkPro</p>
+    <p>📍 Localisation : Oujda</p>
+    <button>Postuler</button>
+</div>
+
+  <!-- Ajoute d'autres offres ici si besoin -->
 </section>
 
 <footer>
-    &copy; 2025 Stage Connect | À propos | Contact | Politique de confidentialité
+  &copy; 2025 Stage Connect | À propos | Contact | Politique de confidentialité
 </footer>
+
+<!-- Script principal -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Afficher toutes les offres au départ
+        document.querySelectorAll('.offer').forEach(offer => {
+            offer.style.display = 'block';
+        });
+    
+        // Gérer la recherche
+        document.querySelector('.search-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const searchTerm = document.getElementById('job-title').value.toLowerCase();
+            let found = false;
+            
+            document.querySelectorAll('.offer').forEach(offer => {
+                const title = offer.querySelector('h3').textContent.toLowerCase();
+                
+                if (searchTerm === '' || title.includes(searchTerm)) {
+                    offer.style.display = 'block';
+                    found = true;
+                } else {
+                    offer.style.display = 'none';
+                }
+            });
+            
+            if (!found && searchTerm !== '') {
+                alert('Aucune offre ne correspond à "' + searchTerm + '"');
+            }
+        });
+    });
+    
+    // Fonction pour afficher les détails
+    function showInfo(button) {
+        const offer = button.closest('.offer');
+        const details = `
+            <h3>${offer.querySelector('h3').textContent}</h3>
+            <p><strong>Entreprise :</strong> ${offer.querySelectorAll('p')[0].textContent}</p>
+            <p><strong>Localisation :</strong> ${offer.querySelectorAll('p')[1].textContent}</p>
+            <img src="${offer.querySelector('img').src}" style="max-width:300px">
+        `;
+        
+        document.getElementById('stageDetails').innerHTML = details;
+        document.getElementById('infoStage').style.display = 'block';
+    }
+    </script>
 
 </body>
 </html>
